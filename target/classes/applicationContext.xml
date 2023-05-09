@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bagDao" class="com.itheima.impl.BagDaoImpl">
+        <!--name写的是BagDaaoImpl中的 private int[] array;的array-->
+        <!--array-->
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+                <value>300</value>
+            </array>
+        </property>
+        <!--list-->
+        <property name="list">
+            <list>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>boxue</value>
+            </list>
+        </property>
+        <!--set-->
+        <property name="set">
+            <set>
+                <value>itcast</value>
+                <value>itheima</value>
+                <value>boxue</value>
+            </set>
+        </property>
+        <!--map-->
+        <property name="map">
+            <map>
+                <!--不能用value，是因为map是key,value的格式-->
+                <entry key="country" value="China"/>
+                <entry key="province" value="henan"/>
+                <entry key="city" value="kaifeng"/>
+            </map>
+        </property>
+        <!--properties-->
+        <property name="properties">
+            <props>
+                <prop key="country">china</prop>
+                <prop key="province">henan</prop>
+                <prop key="city">kaifeng</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--        <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl" autowire="byType"/>-->
+    <!--        <bean id="bookDao" class="BookDaoImpl"/>-->
+
+    <!--    <bean id="bookDao" class="BookDaoImpl">-->
+    <!--        <property name="databaseName" value="mysql"/>-->
+    <!--        <property name="connectionNum" value="10"/>-->
+    <!--    </bean>-->
+    <!--    <bean id="bookDao" class="BookDaoImpl"/>-->
+    <!--    <bean id="userDao" class="com.itheima.factory.UserDaoFactoryBean"/>-->
+    <!--    <bean id="bookDao" class="BookDaoImpl">-->
+    <!--        <constructor-arg index="0" value="10"/>-->
+    <!--        <constructor-arg index="1" value="mysql"/>-->
+    <!--    </bean>-->
+    <!--    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">-->
+    <!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
+    <!--        <constructor-arg name="userDao" ref="userDao"/>-->
+    <!--    </bean>-->
+    <!--    <bean id="bookDao" class="BookDaoImpl">-->
+    <!--        <constructor-arg type="int" value="10"/>-->
+    <!--        <constructor-arg type="java.lang.String" value="mysql"/>-->
+    <!--    </bean>-->
+    <!--    <bean id="bookDao" class="BookDaoImpl">-->
+    <!--        <constructor-arg name="databaseName" value="mysql"/>-->
+    <!--        <constructor-arg name="connectionNum" value="10"/>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="bookService" class="com.itheima.service.impl.BookServiceImpl">-->
+    <!--        &lt;!&ndash;        配置service和dao的关系&ndash;&gt;-->
+    <!--        &lt;!&ndash;        property表示配置当前的属性&ndash;&gt;-->
+    <!--        &lt;!&ndash;        name属性表示配置那一个具体的属性即private BookDao bookDao;中的bookDao&ndash;&gt;-->
+    <!--        &lt;!&ndash;        ref表示参照哪一个bean即<bean id="bookDao" class="BookDaoImpl"/>中的bookDao&ndash;&gt;-->
+    <!--        <property name="bookDao" ref="bookDao"/>-->
+    <!--        &lt;!&ndash;        <property name="userDao" ref="userDao1"/>&ndash;&gt;-->
+    <!--    </bean>-->
+    <!--    <bean id="userDao" class="com.itheima.factory.UserDaoFactoryBean"/>-->
+    <!--    <bean id="userDao1" class="UserDaoImpl"/>-->
+
+</beans>
